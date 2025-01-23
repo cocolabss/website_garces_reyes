@@ -1,4 +1,4 @@
-<h1 style="text-align: center">🌐📄 Landing Page - Garcés Reyes SAS</h1>
+<h1 align="center">🌐📄 Landing Page - Garcés Reyes SAS</h1>
 
 Este proyecto es una Landing Page diseñada para la empresa Garcés Reyes SAS, utilizando HTML y Tailwind CSS. La página está estructurada en seis secciones principales, diseñadas para ofrecer información clara y atractiva sobre los servicios de la empresa relacionados con la seguridad y la salud en el trabajo.
 
