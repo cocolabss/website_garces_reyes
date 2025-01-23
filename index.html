@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Garcés Reyes SAS</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<style>
+		body {
+			font-family: 'Montserrat', sans-serif;
+			overflow-x: hidden;
+		}
+
+		.bg-limited {
+			background-size: 85% 100%;
+			background-repeat: no-repeat;
+			background-position: right;
+		}
+
+		.special-image {
+			position: relative;
+			transform: scale(1.15) translate(45px, -12px);
+			z-index: 1;
+		}
+
+		.custom-bullets {
+			list-style: none;
+			padding-left: 1.5rem;
+		}
+
+		.custom-bullets li {
+			position: relative;
+			margin-bottom: 0.5rem;
+			padding-left: 2rem;
+		}
+
+		.custom-bullets li::before {
+			content: '●';
+			position: absolute;
+			left: 0;
+			font-size: 2rem;
+			color: #C7AC63;
+			line-height: 1;
+		}
+	</style>
+</head>
+
+<body>
+	<section class="relative min-h-[600px] bg-limited" style="background-image: url('images/banner.png');">
+		<div class="absolute inset-0 flex items-center">
+			<div class="ml-12">
+				<img src="images/logo.png" alt="Logo" class="h-[250px] mb-40">
+				<h1 class="text-6xl text-green-800" style="font-weight: 300;">SEGURIDAD Y<br>SALUD EN TU EMPRESA</h1>
+			</div>
+		</div>
+	</section>
+
+	<section class="my-24 ml-12">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+			<div class="relative">
+				<img src="images/image_1.png" alt="Asesoría">
+				<img src="images/plant_1.svg" alt="Planta 1" class="absolute -top-16 -left-12">
+			</div>
+			<div class="text-bottom text-green-800">
+				<div class="mr-12">
+					<h2 class="text-5xl font-bold mb-12" style="font-weight: 500;">Nos enfocamos en la
+						asesoría sobre la seguridad y
+						salud en el trabajo</h2>
+					<p class="text-3xl" style="font-weight: 300;">Nuestra asesoría consiste en diseñar el sistema de gestión
+						de seguridad y salud en el trabajo de la
+						empresa y su implementación.</p>
+				</div>
+				<img src="images/line_short.svg" alt="Separador" style="width: 100vw;" class="mt-8">
+			</div>
+		</div>
+	</section>
+
+	<section class="my-24 mx-12">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+			<div class="text-green-800">
+				<h2 class="text-5xl font-bold mb-12" style="font-weight: 500;">Gestión eficaz de seguridad
+					y salud en el trabajo
+				</h2>
+				<p class="text-3xl" style="font-weight: 300;">Solucionamos de forma concreta y efectiva el desarrollo e
+					implementación del SGSST (Sistemas de
+					Gestión de Seguridad y
+					Salud en el Trabajo), asesorando integralmente.<br><br>Nuestros clientes son todas las empresas que
+					requieran SGSST (Sistemas de Gestión de Seguridad y Salud en el Trabajo) y
+					su implementación, con menos de 50 colaboradores.<br><br>
+				</p>
+				<p class="text-xl" style="font-weight: 300;">*No gestionamos construcción ni minería.</p>
+			</div>
+			<div class="grid grid-cols-2 gap-4 relative">
+				<img src="images/image_2.png" alt="Imagen 1">
+				<img src="images/image_3.png" alt="Imagen 2">
+				<img src="images/plant_2.svg" alt="Planta 2" class="absolute -top-14 -right-12">
+			</div>
+		</div>
+	</section>
+
+	<section class="my-24 mx-12">
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+			<img src="images/image_4.png" alt="Imagen 1">
+			<img src="images/image_5.png" alt="Imagen 2">
+			<img src="images/image_6.png" alt="Imagen 3" class="col-span-2 special-image">
+		</div>
+	</section>
+
+	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="mb-8">
+
+	<section class="py-24 px-12 bg-green-900 text-white">
+		<div class="grid grid-cols-1 md:grid-cols-2 items-center">
+			<div class="text-white">
+				<h2 class="text-5xl font-bold mb-12" style="font-weight: 600;">Atendemos diferentes sectores</h2>
+				<ul class="custom-bullets text-2xl mb-8">
+					<li>Estaciones de servicio</li>
+					<li>Ferreterías</li>
+					<li>Sector salud</li>
+					<li>Talleres mecánicos</li>
+					<li>Veterinarias</li>
+					<li>Almacenes agropecuarios</li>
+				</ul>
+				<p class="text-2xl mb-8">Tenemos servicio en todo el país,
+					con nuestro softwere exclusivo
+					para la administrar todo lo refente
+					a Seguridad y Salud en el trabajo.</p>
+				<p class="text-4xl">Clientes en gran parte del país gestionan SGSST con nuestra acesoria personalizada
+					según sus necesidades.</p>
+			</div>
+			<div>
+				<img src="images/map.png" alt="Mapa">
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 px-12 bg-gray-200 grid grid-cols-1 md:grid-cols-2 gap-12">
+		<div class="text-left text-green-800">
+			<h2 class="text-5xl mb-8" style="font-weight: 400;">Contáctanos</h2>
+			<form class="space-y-4 bg-white rounded-2xl p-8 text-xl">
+				<div>
+					<label for="name" class="block">Nombre - empresa</label>
+					<input type="text" id="name" class="w-full border border-gray-300 rounded-3xl py-2 px-4" required>
+				</div>
+				<div>
+					<label for="email" class="block">Correo Electrónico</label>
+					<input type="email" id="email" class="w-full border border-gray-300 rounded-3xl py-2 px-4" required>
+				</div>
+				<div>
+					<label for="phone" class="block">Teléfono de contacto</label>
+					<input type="phone" id="phone" class="w-full border border-gray-300 rounded-3xl py-2 px-4" required>
+				</div>
+				<div>
+					<label for="message" class="block">Descripción del
+						requerimiento</label>
+					<label for="message" class="block text-sm">(Tipo de empresa, número de
+						empleados, observaciones)</label>
+					<textarea id="message" rows="5" class="w-full border border-gray-300 rounded-3xl py-2 px-4"
+						required></textarea>
+				</div>
+				<div class="flex justify-end">
+					<button type="submit"
+						class="bg-green-800 text-white font-bold py-2 px-8 rounded-lg hover:bg-green-700 text-sm">Contáctanos</button>
+				</div>
+			</form>
+		</div>
+		<div></div>
+	</section>
+</body>
+
+</html>
