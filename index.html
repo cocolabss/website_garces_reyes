@@ -11,6 +11,24 @@
 
 	<link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 	<style>
+		::-webkit-scrollbar {
+			width: 6px;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: #076527;
+			border-radius: 10px;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background-color: #3E8E41;
+		}
+
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+			border-radius: 10px;
+		}
+
 		body {
 			font-family: 'Montserrat', sans-serif;
 			overflow-x: hidden;
@@ -73,7 +91,8 @@
 					<h2 class="text-5xl font-bold mb-12" style="font-weight: 500;">Nos enfocamos en la
 						asesoría sobre la seguridad y
 						salud en el trabajo</h2>
-					<p class="text-3xl" style="font-weight: 300;">Nuestra asesoría consiste en diseñar el sistema de gestión
+					<p class="text-3xl" style="font-weight: 300;">Nuestra asesoría consiste en diseñar el sistema de
+						gestión
 						de seguridad y salud en el trabajo de la
 						empresa y su implementación.</p>
 				</div>
@@ -157,10 +176,9 @@
 					<input type="phone" id="phone" class="w-full border border-gray-300 rounded-3xl py-2 px-4" required>
 				</div>
 				<div>
-					<label for="message" class="block">Descripción del
-						requerimiento</label>
-					<label for="message" class="block text-sm">(Tipo de empresa, número de
-						empleados, observaciones)</label>
+					<label for="message" class="block">Descripción del requerimiento</label>
+					<label for="message" class="block text-sm">(Tipo de empresa, número de empleados,
+						observaciones)</label>
 					<textarea id="message" rows="5" class="w-full border border-gray-300 rounded-3xl py-2 px-4"
 						required></textarea>
 				</div>
@@ -170,7 +188,11 @@
 				</div>
 			</form>
 		</div>
-		<div></div>
+		<div class="flex items-center justify-center">
+			<video src="videos/welcome.mov" autoplay loop controls muted
+				class="rounded-2xl border-4 border-green-800 h-[700px] object-cover">
+			</video>
+		</div>
 	</section>
 </body>
 
