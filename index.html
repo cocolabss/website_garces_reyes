@@ -8,6 +8,7 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
 		rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
 	<link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 	<style>
@@ -31,169 +32,330 @@
 
 		body {
 			font-family: 'Montserrat', sans-serif;
-			overflow-x: hidden;
 		}
 
-		.bg-limited {
-			background-size: 85% 100%;
+		.custom-bg {
+			background-image: url('images/banner.png');
+			background-size: 70% 100%;
 			background-repeat: no-repeat;
 			background-position: right;
 		}
 
-		.special-image {
-			position: relative;
-			transform: scale(1.15) translate(45px, -12px);
-			z-index: 1;
-		}
-
-		.custom-bullets {
-			list-style: none;
-			padding-left: 1.5rem;
-		}
-
-		.custom-bullets li {
-			position: relative;
-			margin-bottom: 0.5rem;
-			padding-left: 2rem;
-		}
-
-		.custom-bullets li::before {
-			content: '●';
-			position: absolute;
-			left: 0;
-			font-size: 2rem;
-			color: #C7AC63;
-			line-height: 1;
+		@media (max-width: 767px) {
+			.custom-bg {
+				background-image: none;
+				background-color: white;
+			}
 		}
 	</style>
 </head>
 
 <body>
-	<section class="relative min-h-[600px] bg-limited" style="background-image: url('images/banner.png');">
-		<div class="absolute inset-0 flex items-center">
-			<div class="ml-12">
-				<img src="images/logo.png" alt="Logo" class="h-[250px] mb-40">
-				<h1 class="text-6xl text-green-800" style="font-weight: 300;">SEGURIDAD Y<br>SALUD EN TU EMPRESA</h1>
+	<header class="fixed top-0 w-full bg-green-900 shadow-md z-50">
+		<div class="container mx-auto flex items-center justify-between px-6 py-4">
+			<img src="images/logo_white.png" alt="Logo" class="h-10">
+
+			<nav class="hidden md:flex space-x-6">
+				<a href="#inicio" class="text-white hover:text-black transition">Inicio</a>
+				<a href="#nosotros" class="text-white hover:text-black transition">Nosotros</a>
+				<a href="#servicios" class="text-white hover:text-black transition">Servicios</a>
+				<a href="#contacto" class="text-white hover:text-black transition">Contáctenos</a>
+			</nav>
+			<a href="https://garcesreyes.com/login" target="_blank"
+				class="hidden md:block text-white text-2xl hover:text-black transition">
+				<i class="fa-solid fa-circle-user"></i>
+			</a>
+
+			<div class="md:hidden">
+				<button id="menuToggle" class="text-white text-2xl">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+		</div>
+
+		<div id="mobileMenu" class="hidden bg-green-900 md:hidden">
+			<nav class="flex flex-col space-y-4 px-6 py-4 text-center">
+				<a href="#inicio" class="text-white hover:text-black transition">Inicio</a>
+				<a href="#nosotros" class="text-white hover:text-black transition">Nosotros</a>
+				<a href="#servicios" class="text-white hover:text-black transition">Servicios</a>
+				<a href="#contacto" class="text-white hover:text-black transition">Contáctenos</a>
+				<a href="https://garcesreyes.com/login" target="_blank" class="text-white hover:text-black transition">
+					Iniciar sesión
+				</a>
+			</nav>
+		</div>
+	</header>
+
+	<div class="h-16"></div>
+
+	<section id="inicio" class="relative min-h-[350px] md:min-h-[600px] custom-bg">
+		<div class="absolute inset-0 flex flex-col justify-between items-start">
+			<div class="mx-6 md:mx-12 mt-6 md:mt-12">
+				<img src="images/logo_green.png" alt="Logo" class="h-32 md:h-[250px]">
+			</div>
+			<div class="mx-6 md:mx-12 mb-6 md:mb-12">
+				<h1 class="text-4xl md:text-6xl text-center md:text-left text-green-800" style="font-weight: 300;">
+					TU ALIADO EN SEGURIDAD<br class="hidden md:block">Y SALUD EN EL TRABAJO
+				</h1>
 			</div>
 		</div>
 	</section>
 
 	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="mb-8">
 
-	<section class="my-24 ml-12">
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+	<section id="nosotros" class="m-6 md:my-12 md:ml-12 md:mx-0">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-end">
 			<div class="relative">
 				<img src="images/image_1.png" alt="Asesoría">
-				<img src="images/plant_1.svg" alt="Planta 1" class="absolute -top-16 -left-12">
+				<img src="images/plant_1.svg" alt="Planta 1"
+					class="absolute h-32 md:h-48 -top-8 md:-top-12 -left-6 md:-left-12">
 			</div>
-			<div class="text-bottom text-green-800">
-				<div class="mr-12">
-					<h2 class="text-5xl font-bold mb-12" style="font-weight: 500;">Nos enfocamos en la
-						asesoría sobre la seguridad y
-						salud en el trabajo</h2>
-					<p class="text-3xl" style="font-weight: 300;">Nuestra asesoría consiste en diseñar el sistema de
-						gestión
-						de seguridad y salud en el trabajo de la
-						empresa y su implementación.</p>
+			<div class="text-center md:text-left text-green-800">
+				<div class="md:mx-12">
+					<h2 class="text-2xl md:text-4xl font-bold mb-6" style="font-weight: 500;">Garantizamos tu
+						cumplimiento legal, cuidamos a tus colaboradores y protegemos tu negocio</h2>
+					<p class="text-lg md:text-2xl" style="font-weight: 300;">Somos expertos en seguridaad y salud en el
+						trabajo, especializados en brindar asesorías personalizadas que garantizan el cumplimiento
+						normativo y promueven ambientes laborales seguros y saludanles. Nuestra misión es simplificar la
+						gestión del SGSST para pequeñas empresas, mientras tú te concentras en hacer crecer tu negocio.
+					</p>
 				</div>
-				<img src="images/line_short.svg" alt="Separador" style="width: 100vw;" class="mt-8">
+				<img src="images/line_short_right.svg" alt="Separador" style="width: 100vw;"
+					class="hidden md:block mt-8">
 			</div>
 		</div>
 	</section>
 
-	<section class="my-24 mx-12">
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-			<div class="text-green-800">
-				<h2 class="text-5xl font-bold mb-12" style="font-weight: 500;">Gestión eficaz de seguridad
-					y salud en el trabajo
-				</h2>
-				<p class="text-3xl" style="font-weight: 300;">Solucionamos de forma concreta y efectiva el desarrollo e
-					implementación del SGSST (Sistemas de
-					Gestión de Seguridad y
-					Salud en el Trabajo), asesorando integralmente.<br><br>Nuestros clientes son todas las empresas que
-					requieran SGSST (Sistemas de Gestión de Seguridad y Salud en el Trabajo) y
-					su implementación, con menos de 50 colaboradores.<br><br>
-				</p>
-				<p class="text-xl" style="font-weight: 300;">*No gestionamos construcción ni minería.</p>
+	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="md:hidden my-8">
+
+	<section class="m-6 md:my-24 md:mx-0">
+		<div
+			class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-center text-green-800 text-center md:text-left">
+			<div>
+				<h2 class="text-2xl md:text-4xl font-bold md:ml-12" style="font-weight: 500;">Nos encargamos de diseñar
+					e implementar el Sistema de Gestión de Seguridad y Salud en el Trabajo (SGSST) de tu empresa.
+					Nuestro servicio abarca:</h2>
+				<img src="images/line_short_left.svg" alt="Separador" style="width: 100vw;"
+					class="hidden md:block mt-8">
 			</div>
-			<div class="grid grid-cols-2 gap-4 relative">
-				<img src="images/image_2.png" alt="Imagen 1">
-				<img src="images/image_3.png" alt="Imagen 2">
-				<img src="images/plant_2.svg" alt="Planta 2" class="absolute -top-14 -right-12">
+			<div class="text-lg md:text-2xl md:mr-12">
+				<p>Diagnóstico inicial de tu empresa en seguridad y salud en el trabajo.</p><br>
+				<p>Creación de un sistema de gestión a la medida de tus necesidades.</p><br>
+				<p>Implementación práctica y efectiva que cumple con la normativa vigente.</p>
 			</div>
 		</div>
 	</section>
 
-	<section class="my-24 mx-12">
-		<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="md:hidden my-8">
+
+	<section id="servicios" class="m-6 md:my-24 md:mx-12">
+		<h2 class="text-2xl md:text-4xl text-green-800 font-bold text-center mb-6 md:mb-12">Capacitación y asesoría
+			integral para prevenir riesgos laborales</h2>
+		<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 relative mb-6 md:mb-12">
 			<img src="images/image_4.png" alt="Imagen 1">
 			<img src="images/image_5.png" alt="Imagen 2">
-			<img src="images/image_6.png" alt="Imagen 3" class="col-span-2 special-image">
+			<img src="images/image_2.png" alt="Imagen 1">
+			<img src="images/image_3.png" alt="Imagen 2">
+			<img src="images/plant_2.svg" alt="Planta 2"
+				class="absolute h-28 md:h-48 -top-6 md:-top-12 -right-6 md:-right-12">
+		</div>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 flex items-center">
+			<div class="text-lg md:text-2xl text-green-800 text-center md:text-left">
+				<p>Sabemos que implementar el SGSST puede ser un desafío. ¡Nosotros lo hacemos fácil!</p><br>
+				<div class="hidden md:block">
+					<p><strong>Cumplimiento legal garantizado:</strong> Evita sanciones y multas relacionadas con el
+						cumplimiento de la
+						normativa en seguridad laboral.</p><br>
+					<p><strong>Ambientes de trabajo seguros:</strong> Protege a tus colaboradores y minimiza los riesgos
+						laborales.</p><br>
+					<p><strong>Asesoría integral:</strong> Desde el diseño hasta la implementación, te acompañamos en
+						cada paso el proceso.
+					</p>
+				</div>
+				<div class="md:hidden">
+					<p><strong>Cumplimiento legal garantizado</strong><br>Evita sanciones y multas relacionadas con el
+						cumplimiento de la
+						normativa en seguridad laboral.</p><br>
+					<p><strong>Ambientes de trabajo seguros</strong><br>Protege a tus colaboradores y minimiza los
+						riesgos
+						laborales.</p><br>
+					<p><strong>Asesoría integral</strong><br>Desde el diseño hasta la implementación, te acompañamos en
+						cada paso el proceso.
+					</p>
+				</div>
+			</div>
+			<img src="images/image_6.png" alt="Imagen 3">
 		</div>
 	</section>
 
-	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="mb-8">
+	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="my-8">
 
-	<section class="py-24 px-12 bg-green-900 text-white">
-		<div class="grid grid-cols-1 md:grid-cols-2 items-center">
-			<div class="text-white">
-				<h2 class="text-5xl font-bold mb-12" style="font-weight: 600;">Atendemos diferentes sectores</h2>
-				<ul class="custom-bullets text-2xl mb-8">
-					<li>Estaciones de servicio</li>
-					<li>Ferreterías</li>
-					<li>Sector salud</li>
-					<li>Talleres mecánicos</li>
-					<li>Veterinarias</li>
-					<li>Almacenes agropecuarios</li>
-				</ul>
-				<p class="text-2xl mb-8">Tenemos servicio en todo el país,
-					con nuestro softwere exclusivo
-					para la administrar todo lo refente
-					a Seguridad y Salud en el trabajo.</p>
-				<p class="text-4xl">Clientes en gran parte del país gestionan SGSST con nuestra acesoria personalizada
-					según sus necesidades.</p>
+	<section class="py-12 md:py-24 px-6 md:px-12 bg-green-900 text-white">
+		<div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12">
+			<div class="text-white text-center md:text-left">
+				<h2 class="text-2xl md:text-4xl font-bold mb-6 md:mb-12" style="font-weight: 600;">Si tu empresa
+					necesita apoyo en seguridad laboral, ¡somos la solución que estabas buscando!</h2>
+				<div class="hidden md:block text-lg md:text-2xl">
+					<p><strong>Especialistas en pequeñas empresas:</strong> Entendemos tus
+						necesidades y diseñamos sistemas a tu medida.</p><br>
+					<p><strong>Cobertura nacional:</strong> Con nuestra tecnología, podemos
+						atender a empresas en cualquier lugar del país. Actualmente, trabajamos con clientes en Quindío,
+						Valle, Cauca y Nariño.</p>
+				</div>
+				<div class="md:hidden text-lg md:text-2xl">
+					<p><strong>Especialistas en pequeñas empresas</strong><br>Entendemos tus
+						necesidades y diseñamos sistemas a tu medida.</p><br>
+					<p><strong>Cobertura nacional</strong><br>Con nuestra tecnología, podemos
+						atender a empresas en cualquier lugar del país. Actualmente, trabajamos con clientes en Quindío,
+						Valle, Cauca y Nariño.</p>
+				</div>
 			</div>
-			<div>
-				<img src="images/map.png" alt="Mapa">
-			</div>
+			<img src="images/map.png" alt="Mapa">
 		</div>
 	</section>
 
-	<section class="py-24 px-12 bg-gray-200 grid grid-cols-1 md:grid-cols-2 gap-12">
-		<div class="text-left text-green-800">
-			<h2 class="text-5xl mb-8" style="font-weight: 400;">Contáctanos</h2>
-			<form class="space-y-4 bg-white rounded-2xl p-8 text-xl">
+	<section id="contacto"
+		class="p-6 md:py-24 md:px-12 bg-gray-200 grid grid-cols-1 md:grid-cols-2 gap-12 flex items-center">
+		<div class="flex justify-center mb-12 md:mb-0">
+			<video src="videos/welcome.mov" autoplay loop controls muted
+				class="rounded-2xl border-4 border-green-800 md:h-[700px] object-cover">
+			</video>
+		</div>
+		<div class="text-green-800">
+			<h2 class="text-2xl md:text-4xl mb-8 text-center md:text-left" style="font-weight: 400;">Contáctanos</h2>
+			<form class="space-y-4 bg-white rounded-2xl p-8 text-xl" id="whatsappForm" novalidate>
 				<div>
 					<label for="name" class="block">Nombre - empresa</label>
-					<input type="text" id="name" class="w-full border border-gray-300 rounded-3xl py-2 px-4" required>
+					<input type="text" id="name" class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500"
+						maxlength="50" required>
+					<small id="nameError" class="text-red-600 hidden">El nombre es obligatorio (máx. 50
+						caracteres).</small>
 				</div>
 				<div>
 					<label for="email" class="block">Correo Electrónico</label>
-					<input type="email" id="email" class="w-full border border-gray-300 rounded-3xl py-2 px-4" required>
+					<input type="email" id="email" class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500"
+						maxlength="100" required>
+					<small id="emailError" class="text-red-600 hidden">Introduce un correo válido (máx. 100
+						caracteres).</small>
 				</div>
 				<div>
 					<label for="phone" class="block">Teléfono de contacto</label>
-					<input type="phone" id="phone" class="w-full border border-gray-300 rounded-3xl py-2 px-4" required>
+					<input type="tel" id="phone" class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500"
+						maxlength="15" required>
+					<small id="phoneError" class="text-red-600 hidden">Introduce un teléfono válido (solo números, máx.
+						15
+						dígitos).</small>
 				</div>
 				<div>
 					<label for="message" class="block">Descripción del requerimiento</label>
 					<label for="message" class="block text-sm">(Tipo de empresa, número de empleados,
 						observaciones)</label>
-					<textarea id="message" rows="5" class="w-full border border-gray-300 rounded-3xl py-2 px-4"
-						required></textarea>
+					<textarea id="message" rows="5" class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500"
+						maxlength="300" required></textarea>
+					<small id="messageError" class="text-red-600 hidden">La descripción es obligatoria (máx. 300
+						caracteres).</small>
 				</div>
 				<div class="flex justify-end">
 					<button type="submit"
-						class="bg-green-800 text-white font-bold py-2 px-8 rounded-lg hover:bg-green-700 text-sm">Contáctanos</button>
+						class="bg-green-800 text-white font-bold py-2 px-8 rounded-lg hover:bg-green-700 text-sm">
+						Contáctanos
+					</button>
 				</div>
 			</form>
 		</div>
-		<div class="flex items-center justify-center">
-			<video src="videos/welcome.mov" autoplay loop controls muted
-				class="rounded-2xl border-4 border-green-800 h-[700px] object-cover">
-			</video>
-		</div>
 	</section>
+
+	<footer class="bg-green-900 text-white py-6">
+		<div class="container mx-auto text-center md:flex justify-between items-center px-6">
+			<div class="mb-4 md:mb-0">
+				<img src="images/logo_white.png" alt="Logo" class="h-16 md:h-12 mx-auto md:mx-0 mb-6 md:mb-0">
+			</div>
+			<div class="text-sm">
+				<p>© 2025 Garcés Reyes SAS. Todos los derechos reservados.</p>
+				<p>Correo electrónico: <a href="mailto:garcesreyessas@gmail.com" target="_blank"
+						class="underline">garcesreyessas@gmail.com</a>
+				</p>
+				<p>Telefono: <a
+						href="https://wa.me/573126635765?text=👋%20¡Hola!%20Me%20encantar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20servicios%20✨.%20¿Me%20podr%C3%ADan%20ayudar%3F%20🙏"
+						target="_blank" class="underline">+57 312 663 5765</a></p>
+			</div>
+			<div></div>
+		</div>
+	</footer>
+
+	<a href="https://wa.me/573126635765?text=👋%20¡Hola!%20Me%20encantar%C3%ADa%20saber%20m%C3%A1s%20sobre%20sus%20servicios%20✨.%20¿Me%20podr%C3%ADan%20ayudar%3F%20🙏"
+		class="fixed bottom-4 right-4 bg-green-700 text-white text-3xl py-3 px-4 rounded-full shadow-lg hover:bg-green-800 transition"
+		target="_blank" rel="noopener noreferrer">
+		<i class="fa-brands fa-whatsapp"></i>
+	</a>
 </body>
+
+<script>
+	const menuToggle = document.getElementById("menuToggle");
+	const mobileMenu = document.getElementById("mobileMenu");
+
+	menuToggle.addEventListener("click", () => {
+		mobileMenu.classList.toggle("hidden");
+	});
+
+	document.getElementById('whatsappForm').addEventListener('submit', function (event) {
+
+
+		event.preventDefault();
+
+		let isValid = true;
+
+		const name = document.getElementById('name').value.trim();
+		const nameError = document.getElementById('nameError');
+		if (name === "" || name.length > 50) {
+			nameError.classList.remove('hidden');
+			isValid = false;
+		} else {
+			nameError.classList.add('hidden');
+		}
+
+		const email = document.getElementById('email').value.trim();
+		const emailError = document.getElementById('emailError');
+		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!email.match(emailPattern) || email.length > 100) {
+			emailError.classList.remove('hidden');
+			isValid = false;
+		} else {
+			emailError.classList.add('hidden');
+		}
+
+		const phone = document.getElementById('phone').value.trim();
+		const phoneError = document.getElementById('phoneError');
+		if (!phone.match(/^[0-9]+$/) || phone.length > 15) {
+			phoneError.classList.remove('hidden');
+			isValid = false;
+		} else {
+			phoneError.classList.add('hidden');
+		}
+
+		const message = document.getElementById('message').value.trim();
+		const messageError = document.getElementById('messageError');
+		if (message === "" || message.length > 300) {
+			messageError.classList.remove('hidden');
+			isValid = false;
+		} else {
+			messageError.classList.add('hidden');
+		}
+
+		if (isValid) {
+			const whatsappMessage = `👋 Hola, me gustaría más información: 
+            \n🔸 Nombre - empresa: ${name} 
+            \n🔸 Correo Electrónico: ${email} 
+            \n🔸 Teléfono: ${phone} 
+            \n🔸 Descripción del requerimiento: ${message}`;
+
+			const encodedMessage = encodeURIComponent(whatsappMessage);
+
+			const phoneNumber = "573126635765";
+
+			window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+		}
+	});
+</script>
 
 </html>
