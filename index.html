@@ -52,7 +52,7 @@
 
 <body>
 	<header class="fixed top-0 w-full bg-green-900 shadow-md z-50">
-		<div class="container mx-auto flex items-center justify-between px-6 py-4">
+		<div class="flex items-center justify-between px-6 py-4">
 			<img src="images/logo_white.png" alt="Logo" class="h-10">
 
 			<nav class="hidden md:flex space-x-6">
@@ -148,7 +148,7 @@
 
 	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="md:hidden my-8">
 
-	<section id="servicios" class="m-6 md:my-24 md:mx-12">
+	<section id="servicios" class="mt-6 md:mt-24 mx-6 md:mx-12">
 		<h2 class="text-2xl md:text-4xl text-green-800 font-bold text-center mb-6 md:mb-12">Capacitación y asesoría
 			integral para prevenir riesgos laborales</h2>
 		<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 relative mb-6 md:mb-12">
@@ -188,7 +188,11 @@
 		</div>
 	</section>
 
-	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="my-8">
+	<img src="images/line_large.svg" alt="Separador" style="width: 100vw;" class="md:hidden my-8">
+
+	<div class="md:flex justify-end hidden -mt-24">
+		<img src="images/line_leaf.png" alt="Separador" class="my-8 w-[70vw]">
+	</div>
 
 	<section class="py-12 md:py-24 px-6 md:px-12 bg-green-900 text-white">
 		<div class="grid grid-cols-1 md:grid-cols-2 items-center gap-6 md:gap-12">
@@ -226,22 +230,25 @@
 			<form class="space-y-4 bg-white rounded-2xl p-8 text-xl" id="whatsappForm" novalidate>
 				<div>
 					<label for="name" class="block">Nombre - empresa</label>
-					<input type="text" id="name" class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500"
-						maxlength="50" required>
+					<input type="text" id="name"
+						class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500" maxlength="50"
+						required>
 					<small id="nameError" class="text-red-600 hidden">El nombre es obligatorio (máx. 50
 						caracteres).</small>
 				</div>
 				<div>
 					<label for="email" class="block">Correo Electrónico</label>
-					<input type="email" id="email" class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500"
-						maxlength="100" required>
+					<input type="email" id="email"
+						class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500" maxlength="100"
+						required>
 					<small id="emailError" class="text-red-600 hidden">Introduce un correo válido (máx. 100
 						caracteres).</small>
 				</div>
 				<div>
 					<label for="phone" class="block">Teléfono de contacto</label>
-					<input type="tel" id="phone" class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500"
-						maxlength="15" required>
+					<input type="tel" id="phone"
+						class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500" maxlength="15"
+						required>
 					<small id="phoneError" class="text-red-600 hidden">Introduce un teléfono válido (solo números, máx.
 						15
 						dígitos).</small>
@@ -250,8 +257,9 @@
 					<label for="message" class="block">Descripción del requerimiento</label>
 					<label for="message" class="block text-sm">(Tipo de empresa, número de empleados,
 						observaciones)</label>
-					<textarea id="message" rows="5" class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500"
-						maxlength="300" required></textarea>
+					<textarea id="message" rows="5"
+						class="w-full border border-gray-300 rounded-3xl py-2 px-4 text-gray-500" maxlength="300"
+						required></textarea>
 					<small id="messageError" class="text-red-600 hidden">La descripción es obligatoria (máx. 300
 						caracteres).</small>
 				</div>
@@ -266,7 +274,7 @@
 	</section>
 
 	<footer class="bg-green-900 text-white py-6">
-		<div class="container mx-auto text-center md:flex justify-between items-center px-6">
+		<div class="text-center md:flex justify-between items-center px-6">
 			<div class="mb-4 md:mb-0">
 				<img src="images/logo_white.png" alt="Logo" class="h-16 md:h-12 mx-auto md:mx-0 mb-6 md:mb-0">
 			</div>
