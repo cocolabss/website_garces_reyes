@@ -300,71 +300,76 @@
 </body>
 
 <script>
-	const menuToggle = document.getElementById("menuToggle");
-	const mobileMenu = document.getElementById("mobileMenu");
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-	menuToggle.addEventListener("click", () => {
-		mobileMenu.classList.toggle("hidden");
-	});
+    menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
 
-	document.getElementById('whatsappForm').addEventListener('submit', function (event) {
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
 
+    document.getElementById('whatsappForm').addEventListener('submit', function (event) {
+        event.preventDefault();
 
-		event.preventDefault();
+        let isValid = true;
 
-		let isValid = true;
+        const name = document.getElementById('name').value.trim();
+        const nameError = document.getElementById('nameError');
+        if (name === "" || name.length > 50) {
+            nameError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            nameError.classList.add('hidden');
+        }
 
-		const name = document.getElementById('name').value.trim();
-		const nameError = document.getElementById('nameError');
-		if (name === "" || name.length > 50) {
-			nameError.classList.remove('hidden');
-			isValid = false;
-		} else {
-			nameError.classList.add('hidden');
-		}
+        const email = document.getElementById('email').value.trim();
+        const emailError = document.getElementById('emailError');
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.match(emailPattern) || email.length > 100) {
+            emailError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            emailError.classList.add('hidden');
+        }
 
-		const email = document.getElementById('email').value.trim();
-		const emailError = document.getElementById('emailError');
-		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		if (!email.match(emailPattern) || email.length > 100) {
-			emailError.classList.remove('hidden');
-			isValid = false;
-		} else {
-			emailError.classList.add('hidden');
-		}
+        const phone = document.getElementById('phone').value.trim();
+        const phoneError = document.getElementById('phoneError');
+        if (!phone.match(/^[0-9]+$/) || phone.length > 15) {
+            phoneError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            phoneError.classList.add('hidden');
+        }
 
-		const phone = document.getElementById('phone').value.trim();
-		const phoneError = document.getElementById('phoneError');
-		if (!phone.match(/^[0-9]+$/) || phone.length > 15) {
-			phoneError.classList.remove('hidden');
-			isValid = false;
-		} else {
-			phoneError.classList.add('hidden');
-		}
+        const message = document.getElementById('message').value.trim();
+        const messageError = document.getElementById('messageError');
+        if (message === "" || message.length > 300) {
+            messageError.classList.remove('hidden');
+            isValid = false;
+        } else {
+            messageError.classList.add('hidden');
+        }
 
-		const message = document.getElementById('message').value.trim();
-		const messageError = document.getElementById('messageError');
-		if (message === "" || message.length > 300) {
-			messageError.classList.remove('hidden');
-			isValid = false;
-		} else {
-			messageError.classList.add('hidden');
-		}
-
-		if (isValid) {
-			const whatsappMessage = `Hola, me gustaría más información: 
+        if (isValid) {
+            const whatsappMessage = `Hola, me gustaría más información: 
             \n Nombre - empresa: ${name} 
             \n Correo Electrónico: ${email} 
             \n Teléfono: ${phone} 
             \n Descripción del requerimiento: ${message}`;
 
-			const encodedMessage = encodeURIComponent(whatsappMessage);
+            const encodedMessage = encodeURIComponent(whatsappMessage);
 
-			const phoneNumber = "573126635765";
+            const phoneNumber = "573126635765";
 
-			window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-		}
-	});
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        }
+    });
 </script>
 
 </html>
